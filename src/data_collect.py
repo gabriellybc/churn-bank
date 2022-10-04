@@ -2,7 +2,7 @@ import pandas as pd
 
 def data_collect():
     df = pd.read_csv(
-        'data/raw/Churn_Modelling.csv'
+        'https://raw.githubusercontent.com/gabriellybc/churn-deploy/main/data/Churn_Modelling.csv'
         , index_col='RowNumber'
         , sep=','
         , encoding='UTF-8'
