@@ -33,11 +33,6 @@ st.write("### Introdução")
 st.write("Esse projeto tem como objetivo criar um modelo de Machine Learning para prever se um cliente irá deixar de usar os produtos do nosso banco.")
 st.write("Para isso, utilizaremos um dataset de clientes de um banco fictício, com informações como: idade, sexo, renda, se possui cartão de crédito, se é um cliente ativo, etc.")
 
-
-st.write("### Objetivo")
-
-st.write("O objetivo é criar um modelo de Machine Learning para prever se um cliente irá deixar de usar os produtos do nosso banco.")
-
 st.write("### Descrição dos dados")
 
 st.write("Os dados foram retirados do [Kaggle](https://www.kaggle.com/datasets/shantanudhakadd/bank-customer-churn-prediction?resource=download).")
@@ -54,20 +49,13 @@ st.write("### Resultados")
 
 st.write("O modelo obteve um F1 Score de 0.66.")
 
-st.write("### Conclusão")
-
-st.write("O modelo obteve um F1 Score de 0.66.")
-st.write("Para saber masi sobre o projeto, acesse o [Medium](https://medium.com/@rafajcalefe/por-gabrielly-cariman-maria-isabel-almeida-e-rafaela-jessica-calefe-1285771854fc).")
-
-st.write("### Referências")
-
-st.write("1. [Kaggle](https://www.kaggle.com/datasets/shantanudhakadd/bank-customer-churn-prediction?resource=download)")
-st.write("3. [F1 Score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)")
-
 st.write("### Código")
 
 st.write("O código desse projeto está no [GitHub](https://github.com/gabriellybc/churn-bank).")
 
+st.markdown("---")
+
+st.write("Para saber mais sobre o projeto, acesse o [Medium](https://medium.com/@rafajcalefe/por-gabrielly-cariman-maria-isabel-almeida-e-rafaela-jessica-calefe-1285771854fc).")
 
 
 # MODEL_URL = F'http://localhost:8000/predict'

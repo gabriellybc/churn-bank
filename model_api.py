@@ -1,6 +1,5 @@
 from fastapi import FastAPI
 import pickle
-from pydantic import BaseModel
 
 # class Item(BaseModel):
 #     text: str
@@ -14,7 +13,17 @@ from pydantic import BaseModel
 # with open("models/tfidf.pkl", "rb") as file:
 #     tfidf = pickle.load(file)
 
-# app = FastAPI()
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: str = None):
+    return {"item_id": item_id, "q": q}
+    
+
 
 # @app.post("/predict/{model}")
 # def predict(model: str, item: Item):
