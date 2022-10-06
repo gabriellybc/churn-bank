@@ -7,24 +7,92 @@ import json
 # from joblib import load
 # import os
 
-MODEL_URL = F'http://localhost:8000/predict'
+st.set_page_config(
+    page_title="Churn em Banco",
+    page_icon="🏦",
+    layout="centered",
+    initial_sidebar_state="expanded",
+    # menu_items={
+    #     'Get Help': 'https://www.extremelycoolapp.com/help',
+    #     'Report a bug': "https://www.extremelycoolapp.com/bug",
+    #     'About': "# This is a header. This is an *extremely* cool app!"
+    # }
+)
 
-def predict_results(url, modelo, sentence):
-    result = requests.post(f"{url}/{modelo}", json={"text": sentence})
-    st.write('O resultado do modelo é: ', json.loads(result.text)["prediction"][0])
+st.title("Churn em Banco")
 
-with st.form("my_ml"):
-    sentence = st.text_input("Texto para classificação")
-    model = st.radio(
-        "Escolha o modelo",
-        ("regressão logistica", "sentiment"))
-    predict = st.form_submit_button("Predict")
+st.write("## Classificação de clientes")
 
-if predict and modelo == 'Regressão Logística':
-    predict_results(MODEL_URL, "logistic_regression", sentence)
+st.write("### Modelo de Machine Learning")
+
+st.write("#### Por: [Gabrielly Cariman](https://www.linkedin.com/in/gabrielly-barcelos-cariman/), [Maria Isabel Almeida](https://www.linkedin.com/in/maria-isabel-oliveira-04975a15a), [Rafaela Jessica Calefe](https://www.linkedin.com/in/rafaela-calefe-006704199)")
+st.write("#### Data: 06/10/2022")
+
+st.write("### Introdução")
+
+st.write("Esse projeto tem como objetivo criar um modelo de Machine Learning para prever se um cliente irá deixar de usar os produtos do nosso banco.")
+st.write("Para isso, utilizaremos um dataset de clientes de um banco fictício, com informações como: idade, sexo, renda, se possui cartão de crédito, se é um cliente ativo, etc.")
+
+
+st.write("### Objetivo")
+
+st.write("O objetivo é criar um modelo de Machine Learning para prever se um cliente irá deixar de usar os produtos do nosso banco.")
+
+st.write("### Descrição dos dados")
+
+st.write("Os dados foram retirados do [Kaggle](https://www.kaggle.com/datasets/shantanudhakadd/bank-customer-churn-prediction?resource=download).")
+
+st.write("### Modelo de Machine Learning")
+
+st.write("O modelo de Machine Learning utilizado foi a Árvore de Decisão.")
+
+st.write("### Métricas")
+
+st.write("A métrica utilizada foi o [F1 Score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html).")
+
+st.write("### Resultados")
+
+st.write("O modelo obteve um F1 Score de 0.66.")
+
+st.write("### Conclusão")
+
+st.write("O modelo obteve um F1 Score de 0.66.")
+st.write("Para saber masi sobre o projeto, acesse o [Medium](https://medium.com/@rafajcalefe/por-gabrielly-cariman-maria-isabel-almeida-e-rafaela-jessica-calefe-1285771854fc).")
+
+st.write("### Referências")
+
+st.write("1. [Kaggle](https://www.kaggle.com/datasets/shantanudhakadd/bank-customer-churn-prediction?resource=download)")
+st.write("3. [F1 Score](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.f1_score.html)")
+
+st.write("### Código")
+
+st.write("O código desse projeto está no [GitHub](https://github.com/gabriellybc/churn-bank).")
+
+
+
+# MODEL_URL = F'http://localhost:8000/predict'
+
+# def predict_results(url, modelo, sentence):
+#     result = requests.post(f"{url}/{modelo}", json={"text": sentence})
+#     st.write('O resultado do modelo é: ', json.loads(result.text)["prediction"][0])
+
+# with st.form("my_ml"):
+#     sentence = st.text_input("Texto para classificação")
+#     model = st.radio(
+#         "Escolha o modelo",
+#         ("regressão logistica", "sentiment"))
+#     predict = st.form_submit_button("Predict")
+
+# if predict and modelo == 'Regressão Logística':
+#     predict_results(MODEL_URL, "logistic_regression", sentence)
 
 
 # st.title("Prevendo o Titanic :passenger_ship: :passenger_ship:")
+
+
+
+
+
 
 # model = load("titanic.joblib")
 
@@ -43,12 +111,12 @@ if predict and modelo == 'Regressão Logística':
 
 # st.header("Vendo nossos scores")
 
-# st.slider("Train Score:", min_value=0.0, max_value=1.0, value=float(score_train))
-# st.slider("Test Score:", min_value=0.0, max_value=1.0, value=float(score_test))
+# st.slider("Train Score:", min_value=0.0, max_value=1.0, value=float(0.8756))
+# st.slider("Test Score:", min_value=0.0, max_value=1.0, value=float(0.987564213))
 
 # st.markdown("---")
 
-# st.dataframe(train.head())
+# # st.dataframe(train.head())
 
 # st.markdown("---")
 
