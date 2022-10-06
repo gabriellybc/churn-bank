@@ -5,23 +5,23 @@ from pydantic import BaseModel
 class Item(BaseModel):
     text: str
 
-with open("models/lr.pkl", "rb") as file:
-    lr = pickle.load(file)
+with open("models/model.pkl", "rb") as file:
+    modelo = pickle.load(file)
 
-with open("models/gnb.pkl", "rb") as file:
-    gnb = pickle.load(file)
+# with open("models/gnb.pkl", "rb") as file:
+#     gnb = pickle.load(file)
 
-with open("models/tfidf.pkl", "rb") as file:
-    tfidf = pickle.load(file)
+# with open("models/tfidf.pkl", "rb") as file:
+#     tfidf = pickle.load(file)
 
 app = FastAPI()
 
 @app.post("/predict/{model}")
 def predict(model: str, item: Item):
-    X = tfidf.transform([item.text]).toarray()
+    X = modelo.transform([item.text]).toarray()
     if model == "logistic_regression":
-        pred = lr.predict(X)
+        pred = modelo.predict(X)
     elif model == "naive_bayes":
-        pred = gnb.predict(X)
+        pred = modelo.predict(X)
 
     return {"model": model, "text": item.text, "prediction": pred.tolist()}
